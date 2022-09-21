@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files*/
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
+.container {
+    padding-left: 0px!important;
+    padding-right: 0px !important;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100% !important;
+  }
+
+
+.small-logo{
+    width: 50px;
+}
+
+.ccli{
+    font-size: x-small;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.icono{
+    text-align: end;
+}
+
+.observacion{
+    text-align: end;
+}
+
+.tipo{
+    text-align: center;
+}
+
+.paginas{
+    text-align: end;
+}
+
+.estado{
+    text-align: center;
+}
+
+
+@media (min-width: 1400px){   
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 98%;
+    margin-right: 10px;
+    }
+}
+
+  
+.tooltip{
+    white-space: pre-line;
+    z-index: 1;
+    position: relative;
+    animation: tooltip 10s infinite;
+    opacity: 1;
+    transition: 2s;
+}
+
+    @keyframes tooltip {
+        0% {background-color: #B8223C;}
+        20% {background-color: #F3B062;}
+        40% {background-color: #90772F;}
+        60% {background-color: #402320;}
+        80% {background-color: #DE8626;}
+        100% {background-color: #C93D21;}
+    } 
+
+.thead{
+        color: white;
+        animation: thead 10s infinite;
+        opacity: 1;
+        transition: 2s;
+    }
+
+    @keyframes thead {
+        0% {background-color: #B8223C;}
+        20% {background-color: #F3B062;}
+        40% {background-color: #90772F;}
+        60% {background-color: #402320;}
+        80% {background-color: #DE8626;}
+        100% {background-color: #C93D21;}
+    }
+ 
