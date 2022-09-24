@@ -76,12 +76,12 @@
       <div class="col">
           <div class="form-check" *ngFor="let estado of estados; let i=index">
             <input class="form-check-input"
-                   type="checkbox"
-                   [value]="estado"
-                   id="flexCheckDefault"
-                   formArraylName="estado"
-                   (change)="marcado($event)">
-            <label class="form-check-label" for="flexCheckDefault">
+                  type="checkbox"
+                  [value]="estado"
+                  [id]="estado"
+                  formArraylName="estado"
+                  (change)="marcado($event)">
+            <label class="form-check-label" [for]="estado">
               {{estado}}
             </label>
           </div>
