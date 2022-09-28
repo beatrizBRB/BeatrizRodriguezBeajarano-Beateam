@@ -10,6 +10,7 @@ import { AplicaService } from '../../services/aplica.service';
 })
 export class ConsultaComponent implements OnInit{
 
+
   aux: Datos [] = [];
   datos: Datos[] = [];
   linea: number = 0;
@@ -25,42 +26,46 @@ export class ConsultaComponent implements OnInit{
     estado: []
   };
 
-  constructor(private consultaService:ConsultaService,
-              private aplicaService: AplicaService) 
-              {
-      this.config = {
-      itemsPerPage: 14,
-      currentPage: 1,
-      totalItems: this.datos.length,
-      
-    };
+  private HEIGTH_ROW: number = 38;
+  private SPACE: number = 3;
 
-      this.tooltip = '<strong>test</strong>';
-   }
-
-  ngOnInit(): void {
+  constructor(private consultaService:ConsultaService, private aplicaService: AplicaService){
+    this.config = {
+    itemsPerPage: this.getIntemsPerPage(),
+    currentPage: 1,
+    totalItems: this.datos.length,
+  };
+    this.tooltip = '<strong>test</strong>';
+  }
   
-      this.consultaService.consulta()
-          .subscribe((datos) =>{
-            this.aux = datos; 
-            this.datos = this.aux;
-            this.linea=this.aux.length;
-          });
-
-          
-      this.aplicaService.getFiltroObservable()
-        .subscribe((filtros) => {
-          this.Filtrar(filtros)});
-
-    }
+  
+  ngOnInit(): void {
+    
+    this.consultaService.consulta()
+    .subscribe((datos) =>{
+      this.aux = datos; 
+      this.datos = this.aux;
+      this.linea=this.aux.length;
+    });
+    
+    
+    this.aplicaService.getFiltroObservable()
+    .subscribe((filtros) => {
+      this.Filtrar(filtros)});
+      
+    } 
 
     Filtrar(filtros:Filtro){
       this.aplicaService.filtrar(filtros).
-        subscribe(data => {
+      subscribe(data => {
           this.datos = data
           this.linea = this.datos.length
         });
 
+    }
+
+    getIntemsPerPage() {
+      return Math.round(window.innerHeight / this.HEIGTH_ROW) - this.SPACE;
     }
     
   }

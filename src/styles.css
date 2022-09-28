@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files*/
-
 html, body { height: 100%; }
 body { 
     margin: 0; 
@@ -54,26 +52,135 @@ body {
     }
 }
 
-  
-.tooltip{
+/*Por debajo de 720px*/
+@media screen and (max-width: 720px) {
+
+       
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1rem 0;
+    }
+    
+    tr:nth-child(odd) {
+        background: #ccc;
+    }
+     
+    td{
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 90%;
+    }
+
+    td:before {
+
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding: 10px;
+        white-space: normal;
+        text-align: left;
+    }
+
+    td:nth-of-type(1):before { content: ""; }
+    td:nth-of-type(2):before { content: "Producto"; }
+    td:nth-of-type(3):before { content: "Observacion"; }
+    td:nth-of-type(4):before { content: "Cantidad"; }
+    td:nth-of-type(5):before { content: "Estado"; }
+    td:nth-of-type(6):before { content: "Tipo"; }
+    td:nth-of-type(7):before { content: "Fecha"; }
+    td:nth-of-type(8):before { content: "Cod. Cliente"; }
+    td:nth-of-type(9):before { content: "Cliente"; }
+
+
+    .boton{
+        padding: 15px;
+    }
+
+    .small-logo{
+        width: 100px;
+    }
+
+    .icono{
+        text-align: center;
+    }
+
+    .referencia{
+        text-align: end;
+    }
+
+    .observacion{
+        text-align: end;
+    }
+    
+   .cantidad{
+        text-align: end;
+   }
+
+    .estado{
+        text-align: end;
+    }
+
+    .tipo{
+        text-align: end;
+    }
+
+    .fecha{
+        text-align: end;
+    }
+
+    .cliente{
+        text-align: end;
+    }
+    .ccli{
+        font-size: small;
+        vertical-align: baseline;
+        text-align: right;
+    }
+
+    .lineas {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .paginas{
+        font-size: x-small;
+        text-align: left;
+        width: 100%;
+    }
+    
+}
+
+.tooltip {
     white-space: pre-line;
     z-index: 1;
     position: relative;
-    animation: tooltip 10s infinite;
+    /*animation: tooltip 10s infinite;*/
     opacity: 1;
     transition: 2s;
 }
 
-    @keyframes tooltip {
+    /* @keyframes tooltip {
         0% {background-color: #B8223C;}
         20% {background-color: #F3B062;}
         40% {background-color: #90772F;}
         60% {background-color: #402320;}
         80% {background-color: #DE8626;}
         100% {background-color: #C93D21;}
-    } 
+    }  */
 
-.thead{
+.thead {
         color: white;
         animation: thead 10s infinite;
         opacity: 1;
@@ -88,4 +195,3 @@ body {
         80% {background-color: #DE8626;}
         100% {background-color: #C93D21;}
     }
- 
